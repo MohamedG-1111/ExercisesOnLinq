@@ -222,6 +222,39 @@ namespace ExercisesOnLinq
 
             //}
             #endregion
+
+            #region Q9
+            ////8. Retrieve the top 5 most expensive products in the 
+            ///"Accessories" category after skipping the first 2 most 
+            ///expensive ones.
+            //        var result = Category
+            //.Join(Products,
+            //    c => c.Id,
+            //    p => p.CategoryId,
+            //    (c, p) => new { c, p })
+            //.Where(res => res.c.Name == "Accessories")
+            //.OrderByDescending(res => res.p.Price)
+            //.Skip(2)
+            //.Take(5);
+            //var result = (from p in Products
+            //              join c in Category
+            //              on p.CategoryId equals c.Id
+            //              where c.Name == "Accessories"
+            //              orderby p.Price descending
+            //              select p)
+            //           .Skip(2)
+            //           .Take(5);
+                        
+
+
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+                
+
+            #endregion
         }
     }
 }

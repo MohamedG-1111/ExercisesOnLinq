@@ -1,31 +1,4 @@
 ﻿
-//5. Display all customers with the count of orders they have placed, including customers with zero orders.
-
-//```csharp
-//var result = from c in CustomerRepository.Customers
-//             join o in OrderRepository.Orders on c.Id equals o.CustomerId into orders
-//             select new { c.FullName, OrderCount = orders.Count() };
-//```
-
-//6. Find all customers who have placed at least one order above 1000, and ensure all their orders are above 50.
-
-//```csharp
-//var result = CustomerRepository.Customers
-//    .Where(c => OrderRepository.Orders
-//        .Where(o => o.CustomerId == c.Id)
-//        .Any(o => o.TotalAmount > 1000) &&
-//        OrderRepository.Orders
-//        .Where(o => o.CustomerId == c.Id)
-//        .All(o => o.TotalAmount > 50));
-//```
-
-//7. List all unique products ordered by all customers, selecting only the product names.
-
-//```csharp
-//var result = (from oi in OrderItemRepository.OrderItems
-//              join p in ProductRepository.Products on oi.ProductId equals p.Id
-//              select p.Name).Distinct();
-//```
 
 //8. Retrieve the top 5 most expensive products in the "Accessories" category after skipping the first 2 most expensive ones.
 

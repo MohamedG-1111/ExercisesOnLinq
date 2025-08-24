@@ -12,5 +12,9 @@ namespace ExercisesOnLinq.Models
         public string Name { get; set; } = string.Empty;
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
+        public override string ToString()
+        {
+            return $"Id: {Id}, Name: {Name}, Price: {Price}, CategoryId: {CategoryId}";
+        }
     }
 }
