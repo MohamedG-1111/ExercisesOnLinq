@@ -39,6 +39,20 @@ namespace ExercisesOnLinq
             //    Console.WriteLine(item);
             //}
             #endregion
+
+            #region Q3
+            /* Group all orders by `CustomerId`, calculate the total `TotalAmount`
+             * for each customer, and order the results by total descending.*/
+            //var result = Orders.GroupBy(g => g.CustomerId, (key, g) => new
+            //{
+            //    CustomerId = key,
+            //    TotalAmount = g.Sum(g => g.TotalAmount),
+            //}).OrderByDescending(res=>res.TotalAmount);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
         }
     }
 }
