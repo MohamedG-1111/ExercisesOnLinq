@@ -11,5 +11,9 @@ namespace ExercisesOnLinq.Models
         public int Id { get; set; }
         public string FullName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public override string ToString()
+        {
+            return $"Id : {Id} , FullName : {FullName} , Email : {Email}";
+        }
     }
 }
