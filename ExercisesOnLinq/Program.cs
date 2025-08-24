@@ -260,17 +260,27 @@ namespace ExercisesOnLinq
             //9. Retrieve the first order with `TotalAmount > 1000`,
             //the first order for customer 5,
             //and the last order in the repository.
-          //var one=Orders.FirstOrDefault(o=>o.TotalAmount>1000);
-          //var Two=Orders.FirstOrDefault(o=>o.CustomerId == 5);
-          //var three=Orders.LastOrDefault();
-          //  var results = new List<Order?> { one, Two, three };
+            //var one=Orders.FirstOrDefault(o=>o.TotalAmount>1000);
+            //var Two=Orders.FirstOrDefault(o=>o.CustomerId == 5);
+            //var three=Orders.LastOrDefault();
+            //  var results = new List<Order?> { one, Two, three };
 
-          //  foreach (var item in results)
-          //  {
-          //      Console.WriteLine($"OrderId: {item?.Id}, CustomerId: {item?.CustomerId}, Total: {item?.TotalAmount}");
-          //  }
+            //  foreach (var item in results)
+            //  {
+            //      Console.WriteLine($"OrderId: {item?.Id}, CustomerId: {item?.CustomerId}, Total: {item?.TotalAmount}");
+            //  }
 
 
+            #endregion
+
+            #region Q11
+            /* Get all products from categories 1 and 2, find products that appear 
+             * in both categories, and remove products that belong only to 
+             * category 2.*/
+            //var Pc1 = Products.Where(p => p.CategoryId == 1);
+            //var Pc2 = Products.Where(p => p.CategoryId == 2);
+            //var Interect=Pc1.IntersectBy(Pc2.Select(P=>P.Id),Pc1=>Pc1.Id);
+            //var Final = Pc1.Except(Pc1.Except(Pc2));
             #endregion
         }
     }

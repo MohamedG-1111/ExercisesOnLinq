@@ -1,14 +1,5 @@
 ﻿
 
-
-//9. Retrieve the first order with `TotalAmount > 1000`, the first order for customer 5, and the last order in the repository.
-
-//```csharp
-//var firstHighOrder = OrderRepository.Orders.First(o => o.TotalAmount > 1000);
-//var firstCustomer5 = OrderRepository.Orders.First(o => o.CustomerId == 5);
-//var lastOrder = OrderRepository.Orders.Last();
-//```
-
 //10. Get all products from categories 1 and 2, find products that appear in both categories, and remove products that belong only to category 2.
 
 //```csharp
