@@ -1,4 +1,6 @@
-﻿using ExercisesOnLinq.Data;
+﻿using System.Security.Cryptography;
+using ExercisesOnLinq.Data;
+using ExercisesOnLinq.Models;
 
 namespace ExercisesOnLinq
 {
@@ -72,6 +74,48 @@ namespace ExercisesOnLinq
             //{
             //    Console.WriteLine($"Customer: {item.CustomerName}, Order ID: {item.OrderID}");
             //}
+            #endregion
+
+            #region Q5
+            /*4. Join `OrderItems`, `Orders`, and `Products` to calculate the total
+             * quantity of each product ordered across all orders, ordered by 
+             * quantity descending.*/
+            //var result = from oi in OrderItem
+            //             join p in Products on oi.ProductId equals p.Id
+            //             group oi by new { oi.ProductId, p.Name } into g
+            //             orderby g.Sum(x => x.Quantity) descending
+            //             select new
+            //             {
+            //                 ProductId = g.Key.ProductId,
+            //                 ProductName = g.Key.Name,
+            //                 TotalQuantity = g.Sum(x => x.Quantity)
+            //             };
+            
+            //var result01 = OrderItem.Join(Products, oi => oi.ProductId, p => p.Id,
+            //    (oi, p) => new
+            //    {
+            //        oi.ProductId,
+            //        p.Name,
+            //        oi.Quantity,
+            //    })
+            //    .GroupBy(res => new { res.ProductId, res.Name }).
+            //Select(g => new
+            //{
+            //    g.Key.ProductId,
+            //    g.Key.Name,
+            //    TotalSum = g.Sum(x => x.Quantity)
+            //}).OrderByDescending(res => res.TotalSum);
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("\n\n");
+            //foreach (var item in result01)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
             #endregion
         }
     }
