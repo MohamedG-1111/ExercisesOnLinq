@@ -148,44 +148,79 @@ namespace ExercisesOnLinq
             #region Q7
             /*Find all customers who have placed at least one order above 1000, 
              * and ensure all their orders are above 50.*/
-    //        var result = Customers
-    //.GroupJoin(
-    //    Orders,
-    //    c => c.Id,
-    //    o => o.CustomerId,
-    //    (customer, orders) => new
-    //    {
-    //        Customer = customer,
-    //        Orders = orders
-    //    }
-    //)
-    //.Where(x =>
-    //    x.Orders.Any(o => o.TotalAmount > 1000)
-    //    &&
-    //    x.Orders.All(o => o.TotalAmount > 50)
-    //);
+            //        var result = Customers
+            //.GroupJoin(
+            //    Orders,
+            //    c => c.Id,
+            //    o => o.CustomerId,
+            //    (customer, orders) => new
+            //    {
+            //        Customer = customer,
+            //        Orders = orders
+            //    }
+            //)
+            //.Where(x =>
+            //    x.Orders.Any(o => o.TotalAmount > 1000)
+            //    &&
+            //    x.Orders.All(o => o.TotalAmount > 50)
+            //);
 
-    //        var result01 = from c in Customers
-    //                     join o in Orders
-    //                     on c.Id equals o.CustomerId
-    //                      into CustomerOrders
-    //                     where CustomerOrders.Any(co => co.TotalAmount > 1000)
-    //                     && CustomerOrders.All(co => co.TotalAmount > 50)
-    //                     select new
-    //                     {
-    //                         c = c
-    //                     };
+            //        var result01 = from c in Customers
+            //                     join o in Orders
+            //                     on c.Id equals o.CustomerId
+            //                      into CustomerOrders
+            //                     where CustomerOrders.Any(co => co.TotalAmount > 1000)
+            //                     && CustomerOrders.All(co => co.TotalAmount > 50)
+            //                     select new
+            //                     {
+            //                         c = c
+            //                     };
 
-    //        foreach (var item in result01)
-    //        {
-    //            Console.WriteLine(item);
-    //        }
-    //        Console.WriteLine();
-    //        foreach (var item in result)
-    //        {
-    //            Console.WriteLine(item.Customer);
-    //        }
-           
+            //        foreach (var item in result01)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
+            //        Console.WriteLine();
+            //        foreach (var item in result)
+            //        {
+            //            Console.WriteLine(item.Customer);
+            //        }
+
+            #endregion
+
+            #region Q8
+            ///*List all unique products ordered by all customers, selecting only the product names.*/
+            //var result = Customers.Join(Orders, c => c.Id, o => o.CustomerId,
+            //    (customer, Order) => new
+            //    {
+            //        CustomerId = customer.Id,
+            //        OrderId = Order.Id
+            //    }).Join(OrderItem, res => res.OrderId, oi => oi.OrderId,
+            //    (order, orderItems) => new
+            //    {
+            //        order.CustomerId,
+            //        orderItems.ProductId,
+            //        order.OrderId,
+            //    }).Join(Products, res => res.ProductId, p => p.Id,
+            //    (res, Products) => Products.Name).Distinct();
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+
+            //}
+            //var result = (from c in Customers
+            //              join o in Orders
+            //              on c.Id equals o.CustomerId
+            //              join OI in OrderItem
+            //              on o.Id equals OI.OrderId
+            //              join P in Products
+            //              on OI.ProductId equals P.Id
+            //              select P.Name).Distinct();
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+
+            //}
             #endregion
         }
     }
