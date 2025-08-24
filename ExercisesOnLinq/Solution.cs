@@ -1,14 +1,5 @@
 ﻿
 
-//8. Retrieve the top 5 most expensive products in the "Accessories" category after skipping the first 2 most expensive ones.
-
-//```csharp
-//var result = ProductRepository.Products
-//    .Where(p => p.CategoryId == 2)
-//    .OrderByDescending(p => p.Price)
-//    .Skip(2)
-//    .Take(5);
-//```
 
 //9. Retrieve the first order with `TotalAmount > 1000`, the first order for customer 5, and the last order in the repository.
 

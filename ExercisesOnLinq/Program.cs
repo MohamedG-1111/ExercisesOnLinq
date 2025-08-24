@@ -244,7 +244,7 @@ namespace ExercisesOnLinq
             //              select p)
             //           .Skip(2)
             //           .Take(5);
-                        
+
 
 
 
@@ -252,7 +252,24 @@ namespace ExercisesOnLinq
             //{
             //    Console.WriteLine(item);
             //}
-                
+
+
+            #endregion
+
+            #region Q10
+            //9. Retrieve the first order with `TotalAmount > 1000`,
+            //the first order for customer 5,
+            //and the last order in the repository.
+          //var one=Orders.FirstOrDefault(o=>o.TotalAmount>1000);
+          //var Two=Orders.FirstOrDefault(o=>o.CustomerId == 5);
+          //var three=Orders.LastOrDefault();
+          //  var results = new List<Order?> { one, Two, three };
+
+          //  foreach (var item in results)
+          //  {
+          //      Console.WriteLine($"OrderId: {item?.Id}, CustomerId: {item?.CustomerId}, Total: {item?.TotalAmount}");
+          //  }
+
 
             #endregion
         }
