@@ -6,7 +6,7 @@ namespace ExercisesOnLinq.Data
 {
     public static class Repository
     {
-        public static List<Product> LoadProducts()
+        public static IEnumerable<Product> LoadProducts()
         {
             return new List<Product>
             {
@@ -28,7 +28,7 @@ namespace ExercisesOnLinq.Data
             };
         }
 
-        public static List<Category> LoadCategories()
+        public static IEnumerable<Category> LoadCategories()
         {
             return new List<Category>
             {
@@ -50,7 +50,7 @@ namespace ExercisesOnLinq.Data
             };
         }
 
-        public static List<Customer> LoadCustomers()
+        public static IEnumerable<Customer> LoadCustomers()
         {
             return new List<Customer>
             {
@@ -72,69 +72,84 @@ namespace ExercisesOnLinq.Data
             };
         }
 
-        public static List<Order> LoadOrders()
+        public static IEnumerable<Order> LoadOrders()
         {
-            var orders = new List<Order>();
             for (int i = 1; i <= 15; i++)
             {
-                orders.Add(new Order
+                yield return new Order
                 {
                     Id = i,
                     CustomerId = (i % 15) + 1,
                     OrderDate = DateTime.Now.AddDays(-i),
                     TotalAmount = 100 * i
-                });
+                };
             }
-            return orders;
         }
 
-        public static List<OrderItem> LoadOrderItems()
+        public static IEnumerable<OrderItem> LoadOrderItems()
         {
-            var orderItems = new List<OrderItem>();
             int id = 1;
             for (int i = 1; i <= 35; i++)
             {
-                orderItems.Add(new OrderItem
+                yield return new OrderItem
                 {
                     Id = id++,
                     OrderId = (i % 15) + 1,
                     ProductId = (i % 15) + 1,
                     Quantity = (i % 5) + 1
-                });
+                };
             }
-            return orderItems;
         }
 
-        public static List<Payment> LoadPayments()
+        public static IEnumerable<Payment> LoadPayments()
         {
-            var payments = new List<Payment>();
             for (int i = 1; i <= 15; i++)
             {
-                payments.Add(new Payment
+                yield return new Payment
                 {
                     Id = i,
                     OrderId = i,
                     Amount = 100 * i,
                     PaymentDate = DateTime.Now.AddDays(-i)
-                });
+                };
             }
-            return payments;
         }
 
-        public static List<Shipment> LoadShipments()
+        public static IEnumerable<Shipment> LoadShipments()
         {
-            var shipments = new List<Shipment>();
             for (int i = 1; i <= 15; i++)
             {
-                shipments.Add(new Shipment
+                yield return new Shipment
                 {
                     Id = i,
                     OrderId = i,
                     TrackingNumber = $"TRK{i:000}",
                     ShippedDate = DateTime.Now.AddDays(-i)
-                });
+                };
             }
-            return shipments;
         }
+        public static void PrintList<T>(List<T> items)
+        {
+            foreach (var item in items)
+            {
+                
+                if (item is string || item.GetType().IsPrimitive)
+                {
+                    Console.WriteLine(item);
+                }
+                else
+                {
+     
+                    var properties = item.GetType().GetProperties();
+                    foreach (var prop in properties)
+                    {
+                        var value = prop.GetValue(item, null);
+                        Console.WriteLine($"{prop.Name}: {value}");
+                    }
+                    Console.WriteLine("-----------");
+                }
+            }
+        }
+
     }
 }

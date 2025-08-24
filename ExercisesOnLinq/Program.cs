@@ -13,6 +13,13 @@ namespace ExercisesOnLinq
             var OrderItem=Repository.LoadOrderItems();
             var Payments= Repository.LoadPayments();
             var Shipment=Repository.LoadShipments();
+            #region Q1
+            //1. From the orders, find the first order where the
+            //`TotalAmount` is above the average total amount of all orders,
+            //var result=Orders.FirstOrDefault(o=>o.TotalAmount > Orders.Average(o=>o.TotalAmount));
+            //Repository.PrintList([result]);
+
+            #endregion
         }
     }
 }
