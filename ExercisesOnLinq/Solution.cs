@@ -1,44 +1,4 @@
-﻿//**LINQ Questions (Intermediate → Advanced) with Solutions**
-
-//---
-
-//1. Retrieve all products in category "Electronics" with a price greater than 500, ordered by price descending, selecting only the product name and price.
-
-//```csharp
-//var result = ProductRepository.Products
-//    .Where(p => p.CategoryId == 1 && p.Price > 500)
-//    .OrderByDescending(p => p.Price)
-//    .Select(p => new { p.Name, p.Price });
-//```
-
-//2. Group all orders by `CustomerId`, calculate the total `TotalAmount` for each customer, and order the results by total descending.
-
-//```csharp
-//var result = OrderRepository.Orders
-//    .GroupBy(o => o.CustomerId)
-//    .Select(g => new { CustomerId = g.Key, Total = g.Sum(o => o.TotalAmount) })
-//    .OrderByDescending(r => r.Total);
-//```
-
-//3. Join `Orders` and `Customers` on `CustomerId`, filter orders with `TotalAmount > 500`, and project the result to include `CustomerName` and `OrderId`.
-
-//```csharp
-//var result = from o in OrderRepository.Orders
-//             join c in CustomerRepository.Customers on o.CustomerId equals c.Id
-//             where o.TotalAmount > 500
-//             select new { c.FullName, o.Id };
-//```
-
-//4. Join `OrderItems`, `Orders`, and `Products` to calculate the total quantity of each product ordered across all orders, ordered by quantity descending.
-
-//```csharp
-//var result = from oi in OrderItemRepository.OrderItems
-//             join p in ProductRepository.Products on oi.ProductId equals p.Id
-//             group oi by p.Name into g
-//             select new { ProductName = g.Key, TotalQuantity = g.Sum(oi => oi.Quantity) };
-//var orderedResult = result.OrderByDescending(r => r.TotalQuantity);
-//```
-
+﻿
 //5. Display all customers with the count of orders they have placed, including customers with zero orders.
 
 //```csharp

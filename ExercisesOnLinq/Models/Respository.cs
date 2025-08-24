@@ -69,6 +69,7 @@ namespace ExercisesOnLinq.Data
                 new Customer { Id = 13, FullName = "Mustafa Gamal", Email = "mustafa@example.com" },
                 new Customer { Id = 14, FullName = "Laila Saeed", Email = "laila@example.com" },
                 new Customer { Id = 15, FullName = "Ziad Hassan", Email = "ziad@example.com" },
+                new Customer { Id = 16, FullName = "Mohamed Gomaa", Email = "Mohamed@example.com" },
             };
         }
 

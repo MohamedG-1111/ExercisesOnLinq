@@ -90,7 +90,7 @@ namespace ExercisesOnLinq
             //                 ProductName = g.Key.Name,
             //                 TotalQuantity = g.Sum(x => x.Quantity)
             //             };
-            
+
             //var result01 = OrderItem.Join(Products, oi => oi.ProductId, p => p.Id,
             //    (oi, p) => new
             //    {
@@ -116,6 +116,33 @@ namespace ExercisesOnLinq
             //    Console.WriteLine(item);
             //}
 
+            #endregion
+
+            #region Q6
+            /*Display all customers with the count of orders they have placed,
+             * including customers with zero orders.*/
+            //var result = from c in Customers
+            //             join o in Orders
+            //             on c.Id equals o.CustomerId
+            //             into gj
+            //             select new
+            //             {
+            //                 CustomerId = c.Id,
+            //                 CustomerName = c.FullName,
+            //                 CountOfOrders = gj.Count(),
+            //             };
+            //var result = Customers.GroupJoin(Orders, c => c.Id, o => o.CustomerId,
+            //    (c, orders) =>new
+            //    {
+            //        CustomerId = c.Id,
+            //        CustomerName = c.FullName,    
+            //        CountOfOrders= orders.Count()
+            //    });
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
             #endregion
         }
     }
