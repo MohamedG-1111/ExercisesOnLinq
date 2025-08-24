@@ -53,6 +53,26 @@ namespace ExercisesOnLinq
             //    Console.WriteLine(item);
             //}
             #endregion
+
+            #region Q4
+            /*3. Join `Orders` and `Customers` on `CustomerId`, filter orders with 
+             * `TotalAmount > 500`, and project the result to include `CustomerName` and
+             * `OrderId`.*/
+            //var result = from o in Orders
+            //             join c in Customers
+            //             on o.CustomerId equals c.Id
+            //             where o.TotalAmount > 500
+            //             select new
+            //             {
+            //                 CustomerName = c.FullName,
+            //                 OrderID = o.Id
+
+            //             };
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"Customer: {item.CustomerName}, Order ID: {item.OrderID}");
+            //}
+            #endregion
         }
     }
 }
