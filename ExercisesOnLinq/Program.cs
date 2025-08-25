@@ -282,6 +282,18 @@ namespace ExercisesOnLinq
             //var Interect=Pc1.IntersectBy(Pc2.Select(P=>P.Id),Pc1=>Pc1.Id);
             //var Final = Pc1.Except(Pc1.Except(Pc2));
             #endregion
+
+            #region Q12
+            /*11. Sort all orders by `CustomerId` ascending, then by `TotalAmount`
+             * descending, and reverse the entire list.*/
+            //var result01=Orders.OrderBy(c=>c.Id).ThenByDescending(o=>o.TotalAmount).Reverse();
+            //foreach (var item in result01)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
         }
     }
 }

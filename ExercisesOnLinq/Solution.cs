@@ -1,14 +1,4 @@
 ﻿
-
-//10. Get all products from categories 1 and 2, find products that appear in both categories, and remove products that belong only to category 2.
-
-//```csharp
-//var category1 = ProductRepository.Products.Where(p => p.CategoryId == 1);
-//var category2 = ProductRepository.Products.Where(p => p.CategoryId == 2);
-//var intersect = category1.Select(p => p.Id).Intersect(category2.Select(p => p.Id));
-//var result = ProductRepository.Products.Where(p => intersect.Contains(p.Id));
-//```
-
 //11. Sort all orders by `CustomerId` ascending, then by `TotalAmount` descending, and reverse the entire list.
 
 //```csharp
