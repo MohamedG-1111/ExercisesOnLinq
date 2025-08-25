@@ -294,6 +294,63 @@ namespace ExercisesOnLinq
 
             #endregion
 
+            #region Q13
+            /*Calculate the total amount spent by all customers on products in category
+             * "Office Supplies" and count the total number of orders.*/
+            //var result = from c in Category
+            //             join p in Products
+            //             on c.Id equals p.CategoryId
+            //             join oi in OrderItem
+            //             on p.Id equals oi.ProductId
+            //             where c.Name == "Office Supplies"
+            //             select new
+            //             {
+            //                 oi.OrderId,
+            //                 Amount = p.Price * oi.Quantity,
+
+            //             };
+            //var TotalAmount = result.Sum(x => x.Amount);
+            //var Count = result.Select(x=>x.OrderId).Distinct().Count();
+            //Console.WriteLine($"TotalAmount : {TotalAmount} , Count : {Count}");
+
+            //var result = OrderItem.Join(Orders, oi => oi.OrderId, o => o.Id,
+            //    (OrderItem, order) => new
+            //    {
+            //        OrderItem.ProductId,
+            //        OrderId = order.Id,
+            //        OrderItem.Quantity,
+            //    }).Join(Products, res => res.ProductId, p => p.Id,
+            //    (res, Product) => new
+            //    {
+            //        res.Quantity,
+            //        res.OrderId,
+            //        Product.CategoryId,
+            //        Product.Price,
+
+            //    }).Join(Category, res => res.CategoryId, c => c.Id,
+            //    (res, cate) => new
+            //    {
+            //        res.OrderId,
+            //        res.Price,
+            //        res.Quantity,
+            //        cate.Name
+            //    }).Where(res => res.Name == "Office Supplies")
+            //    .Select(res => new
+            //    {
+            //        Amount = res.Quantity * res.Price,
+            //        OrderID = res.OrderId
+
+            //    });
+            //var TotalAmount=result.Sum(x => x.Amount);
+            //var Count=result.Select(res=>res.OrderID).Distinct().Count();
+            //Console.WriteLine($"TotalAmount : {TotalAmount} , Count : {Count}");
+
+
+
+
+
+
+            #endregion
         }
     }
 }

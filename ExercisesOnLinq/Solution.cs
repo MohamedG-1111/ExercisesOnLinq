@@ -1,12 +1,4 @@
 ﻿
-//11. Sort all orders by `CustomerId` ascending, then by `TotalAmount` descending, and reverse the entire list.
-
-//```csharp
-//var result = OrderRepository.Orders
-//    .OrderBy(o => o.CustomerId)
-//    .ThenByDescending(o => o.TotalAmount)
-//    .Reverse();
-//```
 
 //12. Calculate the total amount spent by all customers on products in category "Office Supplies" and count the total number of orders.
 
