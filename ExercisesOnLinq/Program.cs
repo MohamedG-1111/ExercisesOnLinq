@@ -351,6 +351,28 @@ namespace ExercisesOnLinq
 
 
             #endregion
+
+            #region Q14
+            /*Group orders by the month of `OrderDate`, calculate sum, average, min, 
+             * and max of `TotalAmount` for each month, and return a list of anonymous objects.*/
+            //var result = Orders.GroupBy(o => o.OrderDate.Month, (key, g) =>new
+            //{
+            //    MonthName = new DateTime(1, key, 1).ToString("MMMM"),
+            //    TotalAmount =g.Sum(o=>o.TotalAmount),
+            //    AverageTotalAmount=g.Average(o=>o.TotalAmount),
+            //    MinTotalAmount=g.Min(o=>o.TotalAmount),
+            //    MaxTotalAmount=g.Max(o=>o.TotalAmount),
+            //});
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"Month Name            : {item.MonthName}");
+            //    Console.WriteLine($"\t TotalAmount        : {item.TotalAmount}");
+            //    Console.WriteLine($"\t AverageTotalAmount : {item.AverageTotalAmount}");
+            //    Console.WriteLine($"\t MinTotalAmount     : {item.MinTotalAmount}");
+            //    Console.WriteLine($"\t MaxTotalAmount     : {item.MaxTotalAmount}");
+            //    Console.WriteLine();
+            //}
+            #endregion
         }
     }
 }

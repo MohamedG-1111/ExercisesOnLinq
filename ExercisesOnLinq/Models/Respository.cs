@@ -81,7 +81,7 @@ namespace ExercisesOnLinq.Data
                 {
                     Id = i,
                     CustomerId = (i % 15) + 1,
-                    OrderDate = DateTime.Now.AddDays(-i),
+                    OrderDate = DateTime.Now.AddDays(-i).AddMonths(-i),
                     TotalAmount = 100 * i
                 };
             }

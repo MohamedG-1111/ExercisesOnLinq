@@ -1,16 +1,5 @@
 ﻿
 
-//12. Calculate the total amount spent by all customers on products in category "Office Supplies" and count the total number of orders.
-
-//```csharp
-//var totalAmount = (from oi in OrderItemRepository.OrderItems
-//                   join p in ProductRepository.Products on oi.ProductId equals p.Id
-//                   join o in OrderRepository.Orders on oi.OrderId equals o.Id
-//                   where p.CategoryId == 3
-//                   select o.TotalAmount).Sum();
-//var orderCount = OrderRepository.Orders.Count();
-//```
-
 //13. Group orders by the month of `OrderDate`, calculate sum, average, min, and max of `TotalAmount` for each month, and return a list of anonymous objects.
 
 //```csharp
