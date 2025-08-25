@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography;
 using ExercisesOnLinq.Data;
 using ExercisesOnLinq.Models;
 
@@ -452,7 +453,36 @@ namespace ExercisesOnLinq
             //foreach (var item in result)
             //{
             //    Console.WriteLine(item.customer.Id +" - "+item.customer.FullName + " - " + item.totalAmount);
-            }
+            //}
+            #endregion
+
+            #region Q18
+            //Find customers where all their orders have `TotalAmount` less than 1000,
+            //but they have at least one order with `TotalAmount > 200`
+            //var result = Customers.GroupJoin(Orders, c => c.Id, o => o.CustomerId,
+            //    (cust, Orders) => new
+            //    {
+            //        cust,
+            //        Orders
+            //    }).Where(res => res.Orders.Any() && res.Orders.All(o => o.TotalAmount < 1000)
+            //    && res.Orders.Any(o => o.TotalAmount > 200));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.cust);
+            //}
+            //var res = from c in Customers
+            //           join o in Orders
+            //           on c.Id equals o.CustomerId
+            //           into CustomerOrders
+            //           where CustomerOrders.All(o => o.TotalAmount < 1000)
+            //           && CustomerOrders.Any(o => o.TotalAmount > 200) 
+            //           select c;
+            //Console.WriteLine(" ------------------------------------- ");
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
             #endregion
         }
     }

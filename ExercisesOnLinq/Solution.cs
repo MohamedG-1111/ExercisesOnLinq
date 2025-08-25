@@ -1,13 +1,4 @@
 ﻿
-//16. Find all customers whose total spending is above the average total spending of all customers.
-
-//```csharp
-//var avgSpending = CustomerRepository.Customers
-//    .Select(c => OrderRepository.Orders.Where(o => o.CustomerId == c.Id).Sum(o => o.TotalAmount))
-//    .Average();
-//var result = CustomerRepository.Customers
-//    .Where(c => OrderRepository.Orders.Where(o => o.CustomerId == c.Id).Sum(o => o.TotalAmount) > avgSpending);
-//```
 
 //17. Find customers where all their orders have `TotalAmount` less than 1000, but they have at least one order with `TotalAmount > 200`.
 
