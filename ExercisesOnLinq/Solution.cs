@@ -1,12 +1,4 @@
 ﻿
-//19. Retrieve orders in a paginated fashion: skip orders until `TotalAmount > 300`, then take orders while `TotalAmount < 1000`.
-
-//```csharp
-//var result = OrderRepository.Orders
-//    .SkipWhile(o => o.TotalAmount <= 300)
-//    .TakeWhile(o => o.TotalAmount < 1000);
-//```
-
 //20. For each customer, find the top 3 products they bought most by quantity. Return `CustomerName`, `ProductName`, and `TotalQuantity`.
 
 //```csharp

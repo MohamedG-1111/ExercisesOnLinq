@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using ExercisesOnLinq.Data;
 using ExercisesOnLinq.Models;
 
@@ -503,14 +504,89 @@ namespace ExercisesOnLinq
             #region Q20
             /* Retrieve orders in a paginated fashion: skip orders until `TotalAmount > 300`,
              * then take orders while `TotalAmount < 1000`.*/
-    //     var result = Orders
-    //.SkipWhile(o => o.TotalAmount <= 300)
-    //.TakeWhile(o => o.TotalAmount < 1000);
-    //        foreach (var item in result)
-    //        {
-    //            Console.WriteLine(item);
-    //        }
+            //     var result = Orders
+            //.SkipWhile(o => o.TotalAmount <= 300)
+            //.TakeWhile(o => o.TotalAmount < 1000);
+            //        foreach (var item in result)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
             #endregion
+
+            #region Q21
+            /* For each customer, find the top 3 products they bought most by quantity.
+             * Return `CustomerName`, `ProductName`, and `TotalQuantity`.*/
+            //var result =
+            //    Customers
+            //    .Join(Orders,
+            //        c => c.Id,
+            //        o => o.CustomerId,
+            //        (c, o) => new { c.FullName, o.Id })
+            //    .Join(OrderItem,
+            //        co => co.Id,
+            //        oi => oi.OrderId,
+            //        (co, oi) => new { co.FullName, oi.ProductId, oi.Quantity })
+            //    .Join(Products,
+            //        coi => coi.ProductId,
+            //        p => p.Id,
+            //        (coi, p) => new { coi.FullName, ProductName = p.Name, coi.Quantity })
+            //    .GroupBy(x => new { x.FullName, x.ProductName })
+            //    .Select(g => new
+            //    {
+            //        g.Key.FullName,
+            //        g.Key.ProductName,
+            //        TotalQuantity = g.Sum(x => x.Quantity)
+            //    })
+            //    .GroupBy(x => x.FullName)
+            //    .SelectMany(g => g
+            //        .OrderByDescending(x => x.TotalQuantity)
+            //        .Take(3));
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"Customer: {item.FullName}, Product: {item.ProductName}, TotalQuantity: {item.TotalQuantity}");
+            //}
+
+            //var result = from c in Customers
+            //             join o in Orders
+            //             on c.Id equals o.CustomerId
+            //             join oi in OrderItem
+            //             on o.Id equals oi.OrderId
+            //             join p in Products
+            //             on oi.ProductId equals p.Id
+            //             group oi by new { c.FullName, p.Name }
+            //             into CustomerProducts
+            //             select new
+            //             {
+            //                 CustomerProducts.Key.FullName,
+            //                 CustomerProducts.Key.Name,
+            //                 TotalQuantity = CustomerProducts.Sum(x => x.Quantity)
+            //             } into Grouped
+            //             group Grouped by Grouped.FullName
+            //             into res
+            //             select new
+            //             {
+            //                 res.Key,
+            //                 TopProducts = res
+            //                                    .OrderByDescending(x => x.TotalQuantity)
+            //                                    .Take(3)
+            //             };
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"Customer: {item.Key}");
+            //    foreach (var prod in item.TopProducts)
+            //    {
+            //        Console.WriteLine($"   Product: {prod.Name}, Quantity: {prod.TotalQuantity}");
+            //    }
+            //}
+
+
+
+
+
+            #endregion
+
 
         }
     }
