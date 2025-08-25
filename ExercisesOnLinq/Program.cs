@@ -484,6 +484,21 @@ namespace ExercisesOnLinq
             //}
 
             #endregion
+
+            #region Q19
+            /* Sort products by the length of their name ascending, then by price descending
+             * using a custom comparer.*/
+            //var result = Products.OrderBy(x => x.Name.Length)
+            //    .ThenByDescending(x => x, new ProductComparer());
+            //var result =Products
+            //    .OrderBy(p => p.Name.Length)
+            //    .ThenByDescending(p => p.Price);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
         }
     }
 }

@@ -1,13 +1,4 @@
 ﻿
-
-//17. Find customers where all their orders have `TotalAmount` less than 1000, but they have at least one order with `TotalAmount > 200`.
-
-//```csharp
-//var result = CustomerRepository.Customers
-//    .Where(c => OrderRepository.Orders.Where(o => o.CustomerId == c.Id).All(o => o.TotalAmount < 1000)
-//                && OrderRepository.Orders.Where(o => o.CustomerId == c.Id).Any(o => o.TotalAmount > 200));
-//```
-
 //18. Sort products by the length of their name ascending, then by price descending using a custom comparer.
 
 //```csharp
