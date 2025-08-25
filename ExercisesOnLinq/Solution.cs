@@ -1,12 +1,4 @@
 ﻿
-//14. Join `Products` and `OrderItems`, filter to show only products with quantity > 1, then select product name, quantity, and order ID.
-
-//```csharp
-//var result = from oi in OrderItemRepository.OrderItems
-//             join p in ProductRepository.Products on oi.ProductId equals p.Id
-//             where oi.Quantity > 1
-//             select new { p.Name, oi.Quantity, oi.OrderId };
-//```
 
 //15. Select all customers and create an anonymous object including `CustomerName`, number of orders, total amount of orders, and a list of distinct products they bought.
 

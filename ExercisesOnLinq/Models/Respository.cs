@@ -75,32 +75,42 @@ namespace ExercisesOnLinq.Data
 
         public static IEnumerable<Order> LoadOrders()
         {
-            for (int i = 1; i <= 15; i++)
+            int orderId = 1;
+            for (int c = 1; c <= 16; c++)
             {
-                yield return new Order
+                for (int j = 0; j < 2; j++) 
                 {
-                    Id = i,
-                    CustomerId = (i % 15) + 1,
-                    OrderDate = DateTime.Now.AddDays(-i).AddMonths(-i),
-                    TotalAmount = 100 * i
-                };
+                    yield return new Order
+                    {
+                        Id = orderId++,
+                        CustomerId = c,
+                        OrderDate = DateTime.Now.AddDays(-orderId).AddMonths(-j),
+                        TotalAmount = 100 * orderId
+                    };
+                }
             }
         }
 
         public static IEnumerable<OrderItem> LoadOrderItems()
         {
             int id = 1;
-            for (int i = 1; i <= 35; i++)
+            var rnd = new Random();
+            for (int orderId = 1; orderId <= 32; orderId++) 
             {
-                yield return new OrderItem
+                int itemsCount = rnd.Next(2, 5);
+                for (int i = 0; i < itemsCount; i++)
                 {
-                    Id = id++,
-                    OrderId = (i % 15) + 1,
-                    ProductId = (i % 15) + 1,
-                    Quantity = (i % 5) + 1
-                };
+                    yield return new OrderItem
+                    {
+                        Id = id++,
+                        OrderId = orderId,
+                        ProductId = rnd.Next(1, 16), 
+                        Quantity = rnd.Next(1, 6)   
+                    };
+                }
             }
         }
+
 
         public static IEnumerable<Payment> LoadPayments()
         {

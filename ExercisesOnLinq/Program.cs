@@ -391,6 +391,53 @@ namespace ExercisesOnLinq
 
 
             #endregion
+
+            #region Q16
+            ///*Select all customers and create an anonymous object including `CustomerName`,
+            // * number of orders, total amount of orders, and a list of distinct products they bought.*/
+            //var result = Customers.GroupJoin(Orders, c => c.Id, o => o.CustomerId,
+            //    (Customer, CustOrders) => new
+            //    {
+            //        Customer.FullName,
+            //        NumOfOrder = CustOrders.Count(),
+            //        TotalAmount = CustOrders.Sum(o => o.TotalAmount),
+            //        CustOrders=CustOrders.Select(c=>c.Id).ToList(),
+            //        products = CustOrders
+            //            .Join(OrderItem, o => o.Id, oi => oi.OrderId,
+            //            (CustOrders, OrderItem) => new
+            //            {
+            //                OrderItem.ProductId
+            //            }).Join(Products, ou => ou.ProductId, p => p.Id,
+            //            (ou, p) =>
+            //                p.Name
+            //            ).Distinct().ToList()
+            //    });
+
+    //        var result =
+    //from c in Customers
+    //join o in Orders on c.Id equals o.CustomerId into CustOrders
+    //select new
+    //{
+    //    CustomerName = c.FullName,
+    //    NumOfOrder = CustOrders.Count(),
+    //    TotalAmount = CustOrders.Sum(x => x.TotalAmount),
+    //    CustOrders = CustOrders.Select(x => x.Id).ToList(),
+    //    products =
+    //        (from o in CustOrders
+    //         join oi in OrderItem on o.Id equals oi.OrderId
+    //         join p in Products on oi.ProductId equals p.Id
+    //         select p.Name).Distinct().ToList()
+    //};
+
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"CustomerName : {item.FullName} , NumOfOrder : {item.NumOfOrder}" +
+            //        $" , TotalAmount : {item.TotalAmount} , Products : {String.Join(',',item.products)}");
+            //}
+
+
+            #endregion
         }
     }
 }
