@@ -1,12 +1,4 @@
 ﻿
-//18. Sort products by the length of their name ascending, then by price descending using a custom comparer.
-
-//```csharp
-//var result = ProductRepository.Products
-//    .OrderBy(p => p.Name.Length)
-//    .ThenByDescending(p => p.Price);
-//```
-
 //19. Retrieve orders in a paginated fashion: skip orders until `TotalAmount > 300`, then take orders while `TotalAmount < 1000`.
 
 //```csharp

@@ -499,6 +499,19 @@ namespace ExercisesOnLinq
             //}
 
             #endregion
+
+            #region Q20
+            /* Retrieve orders in a paginated fashion: skip orders until `TotalAmount > 300`,
+             * then take orders while `TotalAmount < 1000`.*/
+    //     var result = Orders
+    //.SkipWhile(o => o.TotalAmount <= 300)
+    //.TakeWhile(o => o.TotalAmount < 1000);
+    //        foreach (var item in result)
+    //        {
+    //            Console.WriteLine(item);
+    //        }
+            #endregion
+
         }
     }
 }
