@@ -413,21 +413,21 @@ namespace ExercisesOnLinq
             //            ).Distinct().ToList()
             //    });
 
-    //        var result =
-    //from c in Customers
-    //join o in Orders on c.Id equals o.CustomerId into CustOrders
-    //select new
-    //{
-    //    CustomerName = c.FullName,
-    //    NumOfOrder = CustOrders.Count(),
-    //    TotalAmount = CustOrders.Sum(x => x.TotalAmount),
-    //    CustOrders = CustOrders.Select(x => x.Id).ToList(),
-    //    products =
-    //        (from o in CustOrders
-    //         join oi in OrderItem on o.Id equals oi.OrderId
-    //         join p in Products on oi.ProductId equals p.Id
-    //         select p.Name).Distinct().ToList()
-    //};
+            //        var result =
+            //from c in Customers
+            //join o in Orders on c.Id equals o.CustomerId into CustOrders
+            //select new
+            //{
+            //    CustomerName = c.FullName,
+            //    NumOfOrder = CustOrders.Count(),
+            //    TotalAmount = CustOrders.Sum(x => x.TotalAmount),
+            //    CustOrders = CustOrders.Select(x => x.Id).ToList(),
+            //    products =
+            //        (from o in CustOrders
+            //         join oi in OrderItem on o.Id equals oi.OrderId
+            //         join p in Products on oi.ProductId equals p.Id
+            //         select p.Name).Distinct().ToList()
+            //};
 
 
             //foreach (var item in result)
@@ -437,6 +437,22 @@ namespace ExercisesOnLinq
             //}
 
 
+            #endregion
+
+            #region Q17
+            /*Find all customers whose total spending is above the average total spending of all customers.*/
+
+            //var avgSpending = Orders.Average(o => o.TotalAmount);
+            //var result = Customers.GroupJoin(Orders, c => c.Id, o => o.CustomerId,
+            //    (customer, CustOrders) => new
+            //    {
+            //        customer,
+            //        totalAmount = CustOrders.Sum(o => o.TotalAmount)
+            //    }).Where(res => res.totalAmount > avgSpending);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.customer.Id +" - "+item.customer.FullName + " - " + item.totalAmount);
+            }
             #endregion
         }
     }

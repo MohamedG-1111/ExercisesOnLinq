@@ -1,20 +1,4 @@
 ﻿
-
-//15. Select all customers and create an anonymous object including `CustomerName`, number of orders, total amount of orders, and a list of distinct products they bought.
-
-//```csharp
-//var result = CustomerRepository.Customers.Select(c => new {
-//    c.FullName,
-//    OrderCount = OrderRepository.Orders.Count(o => o.CustomerId == c.Id),
-//    TotalAmount = OrderRepository.Orders.Where(o => o.CustomerId == c.Id).Sum(o => o.TotalAmount),
-//    Products = OrderItemRepository.OrderItems
-//        .Where(oi => OrderRepository.Orders.Any(o => o.Id == oi.OrderId && o.CustomerId == c.Id))
-//        .Join(ProductRepository.Products, oi => oi.ProductId, p => p.Id, (oi, p) => p.Name)
-//        .Distinct()
-//        .ToList()
-//});
-//```
-
 //16. Find all customers whose total spending is above the average total spending of all customers.
 
 //```csharp
