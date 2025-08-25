@@ -373,6 +373,24 @@ namespace ExercisesOnLinq
             //    Console.WriteLine();
             //}
             #endregion
+
+            #region Q15
+            /*Join `Products` and `OrderItems`, filter to show only products with quantity > 1, 
+             * then select product name, quantity, and order ID.*/
+            //var result = Products.Join(OrderItem, p => p.Id, oi => oi.ProductId,
+            //    (p, oi) => new
+            //    {
+            //        p.Name,
+            //        oi.OrderId,
+            //        oi.Quantity
+            //    }).Where(res => res.Quantity > 1);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"Name : {item.Name} , OrderId : {item.OrderId} , Quantity : {item.Quantity}");
+            //}
+
+
+            #endregion
         }
     }
 }

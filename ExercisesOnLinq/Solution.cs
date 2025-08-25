@@ -1,19 +1,4 @@
 ﻿
-
-//13. Group orders by the month of `OrderDate`, calculate sum, average, min, and max of `TotalAmount` for each month, and return a list of anonymous objects.
-
-//```csharp
-//var result = OrderRepository.Orders
-//    .GroupBy(o => o.OrderDate.Month)
-//    .Select(g => new {
-//        Month = g.Key,
-//        Sum = g.Sum(o => o.TotalAmount),
-//        Avg = g.Average(o => o.TotalAmount),
-//        Min = g.Min(o => o.TotalAmount),
-//        Max = g.Max(o => o.TotalAmount)
-//    });
-//```
-
 //14. Join `Products` and `OrderItems`, filter to show only products with quantity > 1, then select product name, quantity, and order ID.
 
 //```csharp
