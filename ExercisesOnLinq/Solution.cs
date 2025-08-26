@@ -1,51 +1,7 @@
 ﻿
 
 
-//24. Retrieve orders partitioned by TotalAmount: take orders while TotalAmount < 500, then skip orders
-//until TotalAmount > 800.
-//var result = orders
-// .TakeWhile(o => o.TotalAmount < 500)
-// .Concat(orders.SkipWhile(o => o.TotalAmount <= 800));
 
-
-//25. Find all customers whose total spending is above the average total spending of all customers.
-//var avgSpending = orders.GroupBy(o => o.CustomerId)
-// .Average(g => g.Sum(o => o.TotalAmount));
-//var result = orders.GroupBy(o => o.CustomerId)
-// .Where(g => g.Sum(o => o.TotalAmount) > avgSpending)
-// .Select(g => g.Key);
-
-
-
-//26. Find all customers who have placed at least one order above 1000, and ensure all their orders are
-//above 50.
-//var result = orders
-// .GroupBy(o => o.CustomerId)
-// .Where(g => g.Any(o => o.TotalAmount > 1000) && g.All(o => o.TotalAmount > 50))
-// .Select(g => g.Key);
-
-
-
-
-//27. Group orders by the month of OrderDate, calculate sum, average, min, and max of TotalAmount for
-//each month, and return a list of anonymous objects.
-//var result = orders
-// .GroupBy(o => o.OrderDate.Month)
-// .Select(g => new {
-// Month = g.Key,
-// Sum = g.Sum(o => o.TotalAmount),
-// Avg = g.Average(o => o.TotalAmount),
-// Min = g.Min(o => o.TotalAmount),
-// Max = g.Max(o => o.TotalAmount)
-// });
-
-
-
-
-//28. From the products, select names and prices, then convert the list of anonymous objects to an array.
-//var result = products
-// .Select(p => new { p.Name, p.Price })
-// .ToArray();
 //29. Select customers whose email ends with "example.com" and check if all of them have at least one
 //order above 200.
 //bool allHaveOrderAbove200 = customers

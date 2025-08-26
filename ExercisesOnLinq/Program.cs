@@ -663,6 +663,16 @@ namespace ExercisesOnLinq
             //}
             #endregion
 
+            #region Q26
+            /*From the products, select names and prices, then convert 
+             * the list of anonymous objects to an array.*/
+            //var result = Products.Select(p => new { p.Name, p.Price }).ToArray();   
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
 
         }
     }
