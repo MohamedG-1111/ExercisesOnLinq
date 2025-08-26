@@ -609,16 +609,48 @@ namespace ExercisesOnLinq
             #region Q23
             /*//22. List all products from categories 1 and 2, 
              * find products that appear in both categories, and remove*/
-    //        var result01 = Products.Where(p => p.CategoryId == 1);  
-    //        var result02 = Products.Where(p => p.CategoryId == 2);
-    //        var interected=result01.Intersect(result02,new ProductIEquatabilty());
-    //        var final = result01
-    //.Union(result02) 
-    //.Except(interected, new ProductIEquatabilty()); 
-    //        foreach(var p in final)
-    //            Console.WriteLine(p);
+            //        var result01 = Products.Where(p => p.CategoryId == 1);  
+            //        var result02 = Products.Where(p => p.CategoryId == 2);
+            //        var interected=result01.Intersect(result02,new ProductIEquatabilty());
+            //        var final = result01
+            //.Union(result02) 
+            //.Except(interected, new ProductIEquatabilty()); 
+            //        foreach(var p in final)
+            //            Console.WriteLine(p);
 
             #endregion
+
+
+            #region Q24
+            /*Join OrderItems, Orders, and Products to calculate the 
+             * total quantity of each product ordered across all
+                      orders, ordered by quantity descending.*/
+            var result = Orders.Join(OrderItem, o => o.Id, oi => oi.OrderId,
+                (o, oi) => new
+                {
+                    oi.ProductId,
+                    oi.Quantity
+                }).Join(Products, oi => oi.ProductId, p => p.Id,
+                (oi, p) => new
+                {
+                    p.Id,
+                    p.Name,
+                    oi.Quantity,
+                }).GroupBy(res => new { res.Name })
+                .Select(g => new
+                {
+                    g.Key,
+                    TotalQuantity = g.Sum(r => r.Quantity),
+                }).OrderByDescending(g => g.TotalQuantity);
+
+
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.ProductName}\n\t\t ,TotalQuantity=> {item.TotalQuantity}");
+            }
+            #endregion
+
 
         }
     }

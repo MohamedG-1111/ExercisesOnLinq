@@ -1,12 +1,5 @@
 ﻿
 
-//22. List all products from categories 1 and 2, find products that appear in both categories, and remove
-//products that belong only to category 2.
-//var cat1 = products.Where(p => p.CategoryId == 1);
-//var cat2 = products.Where(p => p.CategoryId == 2);
-//var result = cat1.Intersect(cat2).ToList();
-
-
 //23. Join OrderItems, Orders, and Products to calculate the total quantity of each product ordered across all
 //orders, ordered by quantity descending.
 //var result = orderItems

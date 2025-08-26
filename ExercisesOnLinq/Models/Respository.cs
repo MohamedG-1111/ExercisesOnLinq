@@ -93,22 +93,59 @@ namespace ExercisesOnLinq.Data
 
         public static IEnumerable<OrderItem> LoadOrderItems()
         {
-            int id = 1;
-            var rnd = new Random();
-            for (int orderId = 1; orderId <= 32; orderId++) 
-            {
-                int itemsCount = rnd.Next(2, 5);
-                for (int i = 0; i < itemsCount; i++)
-                {
-                    yield return new OrderItem
-                    {
-                        Id = id++,
-                        OrderId = orderId,
-                        ProductId = rnd.Next(1, 16), 
-                        Quantity = rnd.Next(1, 6)   
-                    };
-                }
-            }
+            return new List<OrderItem>
+    {
+        new OrderItem { Id = 1,  OrderId = 1,  ProductId = 1,  Quantity = 2 },
+        new OrderItem { Id = 2,  OrderId = 1,  ProductId = 2,  Quantity = 1 },
+        new OrderItem { Id = 3,  OrderId = 1,  ProductId = 3,  Quantity = 1 },
+        new OrderItem { Id = 4,  OrderId = 2,  ProductId = 1,  Quantity = 1 },
+        new OrderItem { Id = 5,  OrderId = 2,  ProductId = 4,  Quantity = 2 },
+        new OrderItem { Id = 6,  OrderId = 2,  ProductId = 5,  Quantity = 1 },
+        new OrderItem { Id = 7,  OrderId = 3,  ProductId = 2,  Quantity = 2 },
+        new OrderItem { Id = 8,  OrderId = 3,  ProductId = 3,  Quantity = 1 },
+        new OrderItem { Id = 9,  OrderId = 3,  ProductId = 4,  Quantity = 1 },
+        new OrderItem { Id = 10, OrderId = 4,  ProductId = 1,  Quantity = 3 },
+        new OrderItem { Id = 11, OrderId = 4,  ProductId = 5,  Quantity = 2 },
+        new OrderItem { Id = 12, OrderId = 5,  ProductId = 2,  Quantity = 1 },
+        new OrderItem { Id = 13, OrderId = 5,  ProductId = 3,  Quantity = 2 },
+        new OrderItem { Id = 14, OrderId = 5,  ProductId = 4,  Quantity = 1 },
+        new OrderItem { Id = 15, OrderId = 6,  ProductId = 1,  Quantity = 2 },
+        new OrderItem { Id = 16, OrderId = 6,  ProductId = 5,  Quantity = 1 },
+        new OrderItem { Id = 17, OrderId = 7,  ProductId = 2,  Quantity = 3 },
+        new OrderItem { Id = 18, OrderId = 7,  ProductId = 3,  Quantity = 1 },
+        new OrderItem { Id = 19, OrderId = 7,  ProductId = 4,  Quantity = 2 },
+        new OrderItem { Id = 20, OrderId = 8,  ProductId = 1,  Quantity = 1 },
+        new OrderItem { Id = 21, OrderId = 8,  ProductId = 5,  Quantity = 2 },
+        new OrderItem { Id = 22, OrderId = 9,  ProductId = 2,  Quantity = 1 },
+        new OrderItem { Id = 23, OrderId = 9,  ProductId = 3,  Quantity = 3 },
+        new OrderItem { Id = 24, OrderId = 9,  ProductId = 4,  Quantity = 1 },
+        new OrderItem { Id = 25, OrderId = 10, ProductId = 1,  Quantity = 2 },
+        new OrderItem { Id = 26, OrderId = 10, ProductId = 5,  Quantity = 1 },
+        new OrderItem { Id = 27, OrderId = 11, ProductId = 2,  Quantity = 2 },
+        new OrderItem { Id = 28, OrderId = 11, ProductId = 3,  Quantity = 1 },
+        new OrderItem { Id = 29, OrderId = 11, ProductId = 4,  Quantity = 1 },
+        new OrderItem { Id = 30, OrderId = 12, ProductId = 1,  Quantity = 3 },
+        new OrderItem { Id = 31, OrderId = 12, ProductId = 5,  Quantity = 2 },
+        new OrderItem { Id = 32, OrderId = 13, ProductId = 2,  Quantity = 1 },
+        new OrderItem { Id = 33, OrderId = 13, ProductId = 3,  Quantity = 2 },
+        new OrderItem { Id = 34, OrderId = 13, ProductId = 4,  Quantity = 1 },
+        new OrderItem { Id = 35, OrderId = 14, ProductId = 1,  Quantity = 2 },
+        new OrderItem { Id = 36, OrderId = 14, ProductId = 5,  Quantity = 1 },
+        new OrderItem { Id = 37, OrderId = 15, ProductId = 2,  Quantity = 3 },
+        new OrderItem { Id = 38, OrderId = 15, ProductId = 3,  Quantity = 1 },
+        new OrderItem { Id = 39, OrderId = 15, ProductId = 4,  Quantity = 2 },
+        new OrderItem { Id = 40, OrderId = 16, ProductId = 1,  Quantity = 1 },
+        new OrderItem { Id = 41, OrderId = 16, ProductId = 5,  Quantity = 2 },
+        new OrderItem { Id = 42, OrderId = 17, ProductId = 2,  Quantity = 1 },
+        new OrderItem { Id = 43, OrderId = 17, ProductId = 3,  Quantity = 2 },
+        new OrderItem { Id = 44, OrderId = 17, ProductId = 4,  Quantity = 1 },
+        new OrderItem { Id = 45, OrderId = 18, ProductId = 1,  Quantity = 2 },
+        new OrderItem { Id = 46, OrderId = 18, ProductId = 5,  Quantity = 1 },
+        new OrderItem { Id = 47, OrderId = 19, ProductId = 2,  Quantity = 3 },
+        new OrderItem { Id = 48, OrderId = 19, ProductId = 3,  Quantity = 1 },
+        new OrderItem { Id = 49, OrderId = 20, ProductId = 4,  Quantity = 2 },
+        new OrderItem { Id = 50, OrderId = 20, ProductId = 1,  Quantity = 1 }
+    };
         }
 
 
