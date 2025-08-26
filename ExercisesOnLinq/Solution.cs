@@ -1,9 +1,4 @@
-﻿//21. From the orders, group them by CustomerId and select customers whose all orders have TotalAmount
-//> 300.
-//var result = orders
-// .GroupBy(o => o.CustomerId)
-// .Where(g => g.All(o => o.TotalAmount > 300))
-// .Select(g => g.Key);
+﻿
 
 //22. List all products from categories 1 and 2, find products that appear in both categories, and remove
 //products that belong only to category 2.

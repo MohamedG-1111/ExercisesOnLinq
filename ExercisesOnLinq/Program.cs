@@ -603,7 +603,21 @@ namespace ExercisesOnLinq
             //{
             //    Console.WriteLine(item.c);
             //}
-          
+
+            #endregion
+
+            #region Q23
+            /*//22. List all products from categories 1 and 2, 
+             * find products that appear in both categories, and remove*/
+    //        var result01 = Products.Where(p => p.CategoryId == 1);  
+    //        var result02 = Products.Where(p => p.CategoryId == 2);
+    //        var interected=result01.Intersect(result02,new ProductIEquatabilty());
+    //        var final = result01
+    //.Union(result02) 
+    //.Except(interected, new ProductIEquatabilty()); 
+    //        foreach(var p in final)
+    //            Console.WriteLine(p);
+
             #endregion
 
         }
