@@ -623,32 +623,44 @@ namespace ExercisesOnLinq
 
             #region Q24
             /*Join OrderItems, Orders, and Products to calculate the 
-             * total quantity of each product ordered across all
-                      orders, ordered by quantity descending.*/
-            var result = Orders.Join(OrderItem, o => o.Id, oi => oi.OrderId,
-                (o, oi) => new
-                {
-                    oi.ProductId,
-                    oi.Quantity
-                }).Join(Products, oi => oi.ProductId, p => p.Id,
-                (oi, p) => new
-                {
-                    p.Id,
-                    p.Name,
-                    oi.Quantity,
-                }).GroupBy(res => new { res.Name })
-                .Select(g => new
-                {
-                    g.Key,
-                    TotalQuantity = g.Sum(r => r.Quantity),
-                }).OrderByDescending(g => g.TotalQuantity);
+            // * total quantity of each product ordered across all
+            //          orders, ordered by quantity descending.*/
+            //var result = Orders.Join(OrderItem, o => o.Id, oi => oi.OrderId,
+            //    (o, oi) => new
+            //    {
+            //        oi.ProductId,
+            //        oi.Quantity
+            //    }).Join(Products, oi => oi.ProductId, p => p.Id,
+            //    (oi, p) => new
+            //    {
+            //        p.Id,
+            //        p.Name,
+            //        oi.Quantity,
+            //    }).GroupBy(res => new { res.Name })
+            //    .Select(g => new
+            //    {
+            //        g.Key,
+            //        TotalQuantity = g.Sum(r => r.Quantity),
+            //    }).OrderByDescending(g => g.TotalQuantity);
 
 
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.ProductName}\n\t\t ,TotalQuantity=> {item.TotalQuantity}");
-            }
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.ProductName}\n\t\t ,TotalQuantity=> {item.TotalQuantity}");
+            //}
+            #endregion
+
+
+            #region Q25
+            /* Retrieve orders partitioned by TotalAmount:
+             * take orders while TotalAmount < 500, then skip orders
+                           until TotalAmount > 800*/
+            //var result = Orders.TakeWhile(o => o.TotalAmount < 500).Union(Orders.SkipWhile(o=>o.TotalAmount<800));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
             #endregion
 
 

@@ -1,14 +1,5 @@
 ﻿
 
-//23. Join OrderItems, Orders, and Products to calculate the total quantity of each product ordered across all
-//orders, ordered by quantity descending.
-//var result = orderItems
-// .Join(orders, oi => oi.OrderId, o => o.Id, (oi, o) => new { oi, o })
-// .Join(products, x => x.oi.ProductId, p => p.Id, (x, p) => new { p.Name, x.oi.Quantity })
-// .GroupBy(x => x.Name)
-// .Select(g => new { ProductName = g.Key, TotalQuantity = g.Sum(i => i.Quantity) })
-// .OrderByDescending(r => r.TotalQuantity);
-
 
 //24. Retrieve orders partitioned by TotalAmount: take orders while TotalAmount < 500, then skip orders
 //until TotalAmount > 800.
