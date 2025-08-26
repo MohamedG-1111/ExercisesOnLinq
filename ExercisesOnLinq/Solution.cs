@@ -1,22 +1,4 @@
-﻿
-//20. For each customer, find the top 3 products they bought most by quantity. Return `CustomerName`, `ProductName`, and `TotalQuantity`.
-
-//```csharp
-//var result = CustomerRepository.Customers.Select(c => new {
-//    c.FullName,
-//    TopProducts = OrderItemRepository.OrderItems
-//        .Where(oi => OrderRepository.Orders.Any(o => o.Id == oi.OrderId && o.CustomerId == c.Id))
-//        .GroupBy(oi => oi.ProductId)
-//        .Select(g => new {
-//            ProductName = ProductRepository.Products.First(p => p.Id == g.Key).Name,
-//            TotalQuantity = g.Sum(oi => oi.Quantity)
-//        })
-//        .OrderByDescending(p => p.TotalQuantity)
-//        .Take(3)
-//        .ToList()
-//});
-//```
-//21. From the orders, group them by CustomerId and select customers whose all orders have TotalAmount
+﻿//21. From the orders, group them by CustomerId and select customers whose all orders have TotalAmount
 //> 300.
 //var result = orders
 // .GroupBy(o => o.CustomerId)

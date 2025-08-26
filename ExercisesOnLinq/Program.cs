@@ -587,6 +587,24 @@ namespace ExercisesOnLinq
 
             #endregion
 
+            #region Q22
+            /*From the orders, group them by CustomerId and select customers 
+             * whose all orders have TotalAmount*/
+            //Order o=new Order() { CustomerId=1,TotalAmount=0,Id=100};
+            //List<Order> ordersList = Orders.ToList();
+            //ordersList.Add(o);
+            //var result = Customers.GroupJoin(Orders, c => c.Id, o => o.CustomerId,
+            //    (c, Orders) => new
+            //    {
+            //        c,
+            //        Orders
+            //    }).Where(res => res.Orders.All(o => o.TotalAmount > 0));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.c);
+            //}
+          
+            #endregion
 
         }
     }
