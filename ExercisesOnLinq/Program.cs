@@ -673,6 +673,27 @@ namespace ExercisesOnLinq
             //}
             #endregion
 
+            #region Q27
+            /*Select customers whose email ends with "example.com"
+             * and check if all of them have at least one
+                                       order above 200*/
+            //var result = Customers.GroupJoin(Orders, c => c.Id, o => o.CustomerId,
+            //    (customer, orders) => new
+            //    {
+            //        customer,
+            //        orders,
+            //    }).Where(res => res.customer.Email.EndsWith("example.com")
+            //    && res.orders.Any(o => o.TotalAmount > 200));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.customer);
+            //}
+            //var result = Customers
+ //.Where(c => c.Email.EndsWith("example.com"))
+ //.All(c => Orders.Any(o => o.CustomerId == c.Id && o.TotalAmount > 200));
+
+            #endregion
+
 
         }
     }
